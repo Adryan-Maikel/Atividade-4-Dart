@@ -37,8 +37,27 @@ class Evaluation{
     else print("Aluno reprovado");
   }
 }
-class Event{
 
+class Guest{
+  String name;
+  String celPhone;
+  Guest({
+    required this.name,
+    required this.celPhone
+  });
+}
+class Event{
+  List<int> guests;
+  DateTime date;
+  String venue;
+  Event({
+    required this.guests,
+    required this.date,
+    required this.venue
+  });
+  registerGuest(Guest){
+    print(guests);
+  }
 }
 
 void main(){
@@ -48,5 +67,5 @@ void main(){
   // var evaluation = Evaluation(firstNote: 6, secondNote: 6, thirdNote: 6);
   // evaluation.calculateAverage(evaluation.firstNote, evaluation.secondNote, evaluation.thirdNote);
 
-
+  
 }
