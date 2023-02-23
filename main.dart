@@ -47,25 +47,46 @@ class Guest{
   });
 }
 class Event{
-  List<int> guests;
+  List<Guest> guests;
   DateTime date;
   String venue;
+  Guest? guest;
   Event({
     required this.guests,
     required this.date,
-    required this.venue
+    required this.venue,
+    this.guest
   });
-  registerGuest(Guest){
-    print(guests);
+  void registerGuest(Guest guest){
+    guests.add(guest);
+  }
+  bool removeGuest(Guest guest){
+    return guests.remove(guest);
+  }
+  int numberOfGuests(){
+    return guests.length;
   }
 }
 
 void main(){
+
   // var product = Product(nameProduct: "Camisa Polo", price: 120.00, quantity: 22);
   // print("O total de sua compra é de R\$ ${product.calculateDiscount(product.price, product.quantity).toStringAsFixed(2)}");
-  
+
   // var evaluation = Evaluation(firstNote: 6, secondNote: 6, thirdNote: 6);
   // evaluation.calculateAverage(evaluation.firstNote, evaluation.secondNote, evaluation.thirdNote);
 
+  // var fantasma = Guest(name: "Adryan", celPhone: "5050505050");
+  // var fantasma2 = Guest(name: "Jair", celPhone: "5050505050");
+  // var fantasma3 = Guest(name: "Elaine", celPhone: "5050505050");
+  // var evento = Event(guests: [], date: DateTime.now(), venue: "nao sei");
+
+  // evento.registerGuest(fantasma);
+  // evento.registerGuest(fantasma3);
+  // evento.registerGuest(fantasma2);
+  // evento.removeGuest(fantasma);
+
+  // print(evento.numberOfGuests());
+  // print(evento.guests[0].name);
   
 }
